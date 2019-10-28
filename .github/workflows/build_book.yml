@@ -21,7 +21,9 @@ jobs:
       run: ./mdbook build
       
     - name: Move to docs
-      run: mv -f book docs
+      run: |
+        rm -rf docs
+        mv -f book docs
     
     - name: Remove mdbook
       run: |
